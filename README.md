@@ -479,6 +479,39 @@
 
 		例如，对http 服务器发起请求的request 对象就是一个 Stream，还有stdout（标准输出）
 
+## 模块系统
+		
+		Node.js 中存在 4 类模块（原生模块和3种文件模块）
 
+		尽管 require 方法极其简单，但是内部的加载却是十分复杂的，其加载优先级也各自不同
+
+		文件模块缓存 》原生模块 》文件模块 （所以应该不会出现覆盖）
+
+		require方法接受以下几种参数的传递：
+
+		http、fs、path等，原生模块。
+		./mod或../mod，相对路径的文件模块。
+		/pathtomodule/mod，绝对路径的文件模块。
+		mod，非原生模块的文件模块。
+
+## 路由
+		
+		我们要为路由提供请求的 URL 和其他需要的 GET 及 POST 参数，随后路由需要根据这些数据来执行相应的代码
+
+
+## Node.js 全局对象
+		
+		JavaScript 中有一个特殊的对象，称为全局对象（Global Object），它及其所有属性都可以在程序的任何地方访问，即全局变量。
+
+		在浏览器 JavaScript 中，通常 window 是全局对象， 而 Node.js 中的全局对象是 global，所有全局变量（除了 global 本身以外）都是 global 对象的属性。
+		
+		__filename
+
+		__filename 表示当前正在执行的脚本的文件名
+
+```javascript
+	// 输出全局变量 __filename 的值
+	console.log( __filename );
+```
 
 
